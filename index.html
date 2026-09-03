@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Noor Fatima | Portfolio</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6c63ff;
+            --secondary: #00b4d8;
+            --text: #20243a;
+            --muted: #6b7280;
+            --card: rgba(255, 255, 255, 0.94);
+            --background1: #eef2ff;
+            --background2: #dff8ff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 30px 15px;
+
+            background: linear-gradient(
+                135deg,
+                var(--background1),
+                var(--background2)
+            );
+
+            color: var(--text);
+            transition: 0.4s ease;
+        }
+
+        /* DARK MODE */
+
+        body.dark {
+            --text: #f4f7ff;
+            --muted: #c8cfdd;
+            --card: rgba(25, 30, 48, 0.97);
+            --background1: #111827;
+            --background2: #172554;
+        }
+
+        /* MAIN CARD */
+
+        .portfolio {
+            width: 100%;
+            max-width: 850px;
+
+            background: var(--card);
+
+            border-radius: 30px;
+            overflow: hidden;
+
+            box-shadow:
+                0 25px 70px rgba(31, 41, 55, 0.20);
+
+            backdrop-filter: blur(12px);
+        }
+
+        /* HERO SECTION */
+
+        .hero {
+            position: relative;
+
+            padding: 45px 30px 35px;
+
+            text-align: center;
+
+            background: linear-gradient(
+                135deg,
+                #6c63ff,
+                #00b4d8
+            );
+
+            color: white;
+        }
+
+        /* THEME BUTTON */
+
+        .theme-btn {
+            position: absolute;
+
+            right: 22px;
+            top: 20px;
+
+            width: 43px;
+            height: 43px;
+
+            border: none;
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.22);
+
+            color: white;
+
+            font-size: 19px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .theme-btn:hover {
+            transform: rotate(20deg) scale(1.1);
+            background: rgba(255,255,255,0.35);
+        }
+
+        /* PROFILE IMAGE */
+
+        .profile-photo {
+            width: 135px;
+            height: 135px;
+
+            object-fit: cover;
+            object-position: center top;
+
+            border-radius: 50%;
+
+            border: 5px solid white;
+
+            box-shadow:
+                0 12px 30px rgba(0,0,0,0.25);
+        }
+
+        .hero h1 {
+            margin-top: 17px;
+
+            font-size: 34px;
+            font-weight: 700;
+        }
+
+        .role {
+            margin-top: 6px;
+
+            font-size: 15px;
+            font-weight: 500;
+
+            letter-spacing: 0.5px;
+        }
+
+        /* CONTENT */
+
+        .content {
+            padding: 35px 40px 30px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 13px;
+
+            font-size: 21px;
+
+            color: var(--primary);
+        }
+
+        /* ABOUT */
+
+        .about {
+            color: var(--muted);
+
+            line-height: 1.8;
+
+            font-size: 14.5px;
+        }
+
+        /* SKILLS */
+
+        .skills {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+        }
+
+        .skill {
+            padding: 9px 15px;
+
+            border-radius: 25px;
+
+            background: linear-gradient(
+                135deg,
+                #eef2ff,
+                #e0f7ff
+            );
+
+            color: #4f46e5;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-4px);
+        }
+
+        body.dark .skill {
+            background: #293450;
+            color: #a5b4fc;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 15px;
+        }
+
+        .project {
+            padding: 20px;
+
+            border-radius: 18px;
+
+            background: rgba(108, 99, 255, 0.07);
+
+            border: 1px solid
+                rgba(108, 99, 255, 0.13);
+
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 10px 25px
+                rgba(108, 99, 255, 0.12);
+        }
+
+        .project-icon {
+            font-size: 26px;
+        }
+
+        .project h3 {
+            margin: 9px 0 6px;
+
+            font-size: 16px;
+
+            color: var(--text);
+        }
+
+        .project p {
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.6;
+        }
+
+        /* CONTACT */
+
+        .contact-box {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 12px;
+        }
+
+        .contact {
+            text-decoration: none;
+
+            color: var(--muted);
+
+            padding: 14px;
+
+            border-radius: 14px;
+
+            background:
+                rgba(0, 180, 216, 0.07);
+
+            text-align: center;
+
+            font-size: 12px;
+
+            word-break: break-word;
+
+            transition: 0.3s;
+        }
+
+        .contact:hover {
+            transform: translateY(-3px);
+
+            color: var(--primary);
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+
+            padding: 18px;
+
+            border-top:
+                1px solid rgba(128,128,128,0.15);
+
+            color: var(--muted);
+
+            font-size: 12px;
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 650px) {
+
+            .content {
+                padding: 28px 22px;
+            }
+
+            .hero {
+                padding:
+                    38px 20px 30px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .profile-photo {
+                width: 115px;
+                height: 115px;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-box {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="portfolio">
+
+        <!-- HERO SECTION -->
+
+        <header class="hero">
+
+            <button
+                class="theme-btn"
+                id="themeBtn"
+                title="Change Theme">
+                🌙
+            </button>
+
+            <img
+                src="c:\Users\Noor\OneDrive\Documents\moiiii pic.jpeg"
+                alt="Noor Fatima"
+                class="profile-photo"
+            >
+
+            <h1>Noor Fatima</h1>
+
+            <p class="role">
+                Software Development Enthusiast |
+                Web Developer
+            </p>
+
+        </header>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="content">
+
+
+            <!-- ABOUT ME -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    ✨ About Me
+                </h2>
+
+                <p class="about">
+                    I am a passionate Software Engineering student
+                    interested in web development, programming and
+                    problem solving. I enjoy turning ideas into clean,
+                    interactive and user-friendly digital experiences
+                    while continuously learning new technologies.
+                </p>
+
+            </section>
+
+
+            <!-- SKILLS -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    💡 My Skills
+                </h2>
+
+                <div class="skills">
+
+                    <span class="skill">
+                        HTML5
+                    </span>
+
+                    <span class="skill">
+                        CSS3
+                    </span>
+
+                    <span class="skill">
+                        JavaScript
+                    </span>
+
+                    <span class="skill">
+                        C++
+                    </span>
+
+                    <span class="skill">
+                        Python
+                    </span>
+
+                    <span class="skill">
+                        Problem Solving
+                    </span>
+
+                    <span class="skill">
+                        Responsive Design
+                    </span>
+
+                    <span class="skill">
+                        Git & GitHub
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- PROJECTS -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    🚀 Featured Projects
+                </h2>
+
+                <div class="projects">
+
+
+                    <div class="project">
+
+                        <div class="project-icon">
+                            🎓
+                        </div>
+
+                        <h3>
+                            EduTrack Management System
+                        </h3>
+
+                        <p>
+                            A student-focused system designed
+                            to organize academic records and
+                            simplify information management.
+                        </p>
+
+                    </div>
+
+
+                    <div class="project">
+
+                        <div class="project-icon">
+                            🌐
+                        </div>
+
+                        <h3>
+                            Nova Personal Portfolio
+                        </h3>
+
+                        <p>
+                            A modern responsive portfolio
+                            interface created to showcase
+                            skills, projects and professional
+                            information.
+                        </p>
+
+                    </div>
+
+
+                    <div class="project">
+
+                        <div class="project-icon">
+                            🧠
+                        </div>
+
+                        <h3>
+                            Smart Quiz Arena
+                        </h3>
+
+                        <p>
+                            An interactive quiz project
+                            designed to test knowledge through
+                            a simple and engaging interface.
+                        </p>
+
+                    </div>
+
+
+                    <div class="project">
+
+                        <div class="project-icon">
+                            🔎
+                        </div>
+
+                        <h3>
+                            CodeSearch Toolkit
+                        </h3>
+
+                        <p>
+                            A programming practice project
+                            exploring searching, sorting and
+                            logical problem-solving techniques.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CONTACT -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    📬 Contact Me
+                </h2>
+
+                <div class="contact-box">
+
+
+                    <a
+                        class="contact"
+                        href="mailto:nf1928249@gmail.com">
+
+                        📧
+                        <br>
+
+                        nf1928249@gmail.com
+
+                    </a>
+
+
+                    <a
+                        class="contact"
+                        href="https://www.linkedin.com/in/noorfatima293"
+                        target="_blank">
+
+                        💼
+                        <br>
+
+                        LinkedIn
+
+                    </a>
+
+
+                    <a
+                        class="contact"
+                        href="https://github.com/noorfatima293"
+                        target="_blank">
+
+                        💻
+                        <br>
+
+                        GitHub
+
+                    </a>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            © 2026 Noor Fatima
+            • Personal Portfolio
+
+        </footer>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        const themeBtn =
+            document.getElementById("themeBtn");
+
+        themeBtn.addEventListener("click", function () {
+
+            document.body.classList.toggle("dark");
+
+            if (
+                document.body.classList.contains("dark")
+            ) {
+
+                themeBtn.textContent = "☀️";
+
+            } else {
+
+                themeBtn.textContent = "🌙";
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
