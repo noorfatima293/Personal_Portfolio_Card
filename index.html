@@ -28,24 +28,18 @@
         body {
             font-family: 'Poppins', sans-serif;
             min-height: 100vh;
-
             display: flex;
             justify-content: center;
             align-items: center;
-
             padding: 30px 15px;
-
             background: linear-gradient(
                 135deg,
                 var(--background1),
                 var(--background2)
             );
-
             color: var(--text);
             transition: 0.4s ease;
         }
-
-        /* DARK MODE */
 
         body.dark {
             --text: #f4f7ff;
@@ -55,63 +49,41 @@
             --background2: #172554;
         }
 
-        /* MAIN CARD */
-
         .portfolio {
             width: 100%;
             max-width: 850px;
-
             background: var(--card);
-
             border-radius: 30px;
             overflow: hidden;
-
             box-shadow:
                 0 25px 70px rgba(31, 41, 55, 0.20);
-
             backdrop-filter: blur(12px);
         }
 
-        /* HERO SECTION */
-
         .hero {
             position: relative;
-
             padding: 45px 30px 35px;
-
             text-align: center;
-
             background: linear-gradient(
                 135deg,
                 #6c63ff,
                 #00b4d8
             );
-
             color: white;
         }
 
-        /* THEME BUTTON */
-
         .theme-btn {
             position: absolute;
-
             right: 22px;
             top: 20px;
-
             width: 43px;
             height: 43px;
-
             border: none;
             border-radius: 50%;
-
             background: rgba(255,255,255,0.22);
-
             color: white;
-
             font-size: 19px;
-
             cursor: pointer;
-
             transition: 0.3s;
         }
 
@@ -120,40 +92,18 @@
             background: rgba(255,255,255,0.35);
         }
 
-        /* PROFILE IMAGE */
-
-        .profile-photo {
-            width: 135px;
-            height: 135px;
-
-            object-fit: cover;
-            object-position: center top;
-
-            border-radius: 50%;
-
-            border: 5px solid white;
-
-            box-shadow:
-                0 12px 30px rgba(0,0,0,0.25);
-        }
-
         .hero h1 {
-            margin-top: 17px;
-
+            margin-top: 10px;
             font-size: 34px;
             font-weight: 700;
         }
 
         .role {
             margin-top: 6px;
-
             font-size: 15px;
             font-weight: 500;
-
             letter-spacing: 0.5px;
         }
-
-        /* CONTENT */
 
         .content {
             padding: 35px 40px 30px;
@@ -166,53 +116,35 @@
         .section-title {
             display: flex;
             align-items: center;
-
             gap: 10px;
-
             margin-bottom: 13px;
-
             font-size: 21px;
-
             color: var(--primary);
         }
 
-        /* ABOUT */
-
         .about {
             color: var(--muted);
-
             line-height: 1.8;
-
             font-size: 14.5px;
         }
 
-        /* SKILLS */
-
         .skills {
             display: flex;
-
             flex-wrap: wrap;
-
             gap: 10px;
         }
 
         .skill {
             padding: 9px 15px;
-
             border-radius: 25px;
-
             background: linear-gradient(
                 135deg,
                 #eef2ff,
                 #e0f7ff
             );
-
             color: #4f46e5;
-
             font-size: 13px;
-
             font-weight: 600;
-
             transition: 0.3s;
         }
 
@@ -225,33 +157,22 @@
             color: #a5b4fc;
         }
 
-        /* PROJECTS */
-
         .projects {
             display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
+            grid-template-columns: repeat(2, 1fr);
             gap: 15px;
         }
 
         .project {
             padding: 20px;
-
             border-radius: 18px;
-
             background: rgba(108, 99, 255, 0.07);
-
-            border: 1px solid
-                rgba(108, 99, 255, 0.13);
-
+            border: 1px solid rgba(108, 99, 255, 0.13);
             transition: 0.3s;
         }
 
         .project:hover {
             transform: translateY(-5px);
-
             box-shadow:
                 0 10px 25px
                 rgba(108, 99, 255, 0.12);
@@ -263,74 +184,46 @@
 
         .project h3 {
             margin: 9px 0 6px;
-
             font-size: 16px;
-
             color: var(--text);
         }
 
         .project p {
             color: var(--muted);
-
             font-size: 13px;
-
             line-height: 1.6;
         }
 
-        /* CONTACT */
-
         .contact-box {
             display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
+            grid-template-columns: repeat(3, 1fr);
             gap: 12px;
         }
 
         .contact {
             text-decoration: none;
-
             color: var(--muted);
-
             padding: 14px;
-
             border-radius: 14px;
-
-            background:
-                rgba(0, 180, 216, 0.07);
-
+            background: rgba(0, 180, 216, 0.07);
             text-align: center;
-
             font-size: 12px;
-
             word-break: break-word;
-
             transition: 0.3s;
         }
 
         .contact:hover {
             transform: translateY(-3px);
-
             color: var(--primary);
         }
 
-        /* FOOTER */
-
         footer {
             text-align: center;
-
             padding: 18px;
-
-            border-top:
-                1px solid rgba(128,128,128,0.15);
-
+            border-top: 1px solid rgba(128,128,128,0.15);
             color: var(--muted);
-
             font-size: 12px;
         }
-
-        /* RESPONSIVE DESIGN */
 
         @media (max-width: 650px) {
 
@@ -339,17 +232,11 @@
             }
 
             .hero {
-                padding:
-                    38px 20px 30px;
+                padding: 38px 20px 30px;
             }
 
             .hero h1 {
                 font-size: 28px;
-            }
-
-            .profile-photo {
-                width: 115px;
-                height: 115px;
             }
 
             .projects {
@@ -367,8 +254,6 @@
 
     <div class="portfolio">
 
-        <!-- HERO SECTION -->
-
         <header class="hero">
 
             <button
@@ -377,12 +262,6 @@
                 title="Change Theme">
                 🌙
             </button>
-
-            <img
-                src="c:\Users\Noor\OneDrive\Documents\moiiii pic.jpeg"
-                alt="Noor Fatima"
-                class="profile-photo"
-            >
 
             <h1>Noor Fatima</h1>
 
@@ -393,13 +272,7 @@
 
         </header>
 
-
-        <!-- MAIN CONTENT -->
-
         <main class="content">
-
-
-            <!-- ABOUT ME -->
 
             <section class="section">
 
@@ -417,9 +290,6 @@
 
             </section>
 
-
-            <!-- SKILLS -->
-
             <section class="section">
 
                 <h2 class="section-title">
@@ -428,44 +298,18 @@
 
                 <div class="skills">
 
-                    <span class="skill">
-                        HTML5
-                    </span>
-
-                    <span class="skill">
-                        CSS3
-                    </span>
-
-                    <span class="skill">
-                        JavaScript
-                    </span>
-
-                    <span class="skill">
-                        C++
-                    </span>
-
-                    <span class="skill">
-                        Python
-                    </span>
-
-                    <span class="skill">
-                        Problem Solving
-                    </span>
-
-                    <span class="skill">
-                        Responsive Design
-                    </span>
-
-                    <span class="skill">
-                        Git & GitHub
-                    </span>
+                    <span class="skill">HTML5</span>
+                    <span class="skill">CSS3</span>
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">C++</span>
+                    <span class="skill">Python</span>
+                    <span class="skill">Problem Solving</span>
+                    <span class="skill">Responsive Design</span>
+                    <span class="skill">Git & GitHub</span>
 
                 </div>
 
             </section>
-
-
-            <!-- PROJECTS -->
 
             <section class="section">
 
@@ -475,12 +319,9 @@
 
                 <div class="projects">
 
-
                     <div class="project">
 
-                        <div class="project-icon">
-                            🎓
-                        </div>
+                        <div class="project-icon">🎓</div>
 
                         <h3>
                             EduTrack Management System
@@ -494,12 +335,9 @@
 
                     </div>
 
-
                     <div class="project">
 
-                        <div class="project-icon">
-                            🌐
-                        </div>
+                        <div class="project-icon">🌐</div>
 
                         <h3>
                             Nova Personal Portfolio
@@ -514,12 +352,9 @@
 
                     </div>
 
-
                     <div class="project">
 
-                        <div class="project-icon">
-                            🧠
-                        </div>
+                        <div class="project-icon">🧠</div>
 
                         <h3>
                             Smart Quiz Arena
@@ -533,12 +368,9 @@
 
                     </div>
 
-
                     <div class="project">
 
-                        <div class="project-icon">
-                            🔎
-                        </div>
+                        <div class="project-icon">🔎</div>
 
                         <h3>
                             CodeSearch Toolkit
@@ -556,9 +388,6 @@
 
             </section>
 
-
-            <!-- CONTACT -->
-
             <section class="section">
 
                 <h2 class="section-title">
@@ -567,18 +396,15 @@
 
                 <div class="contact-box">
 
-
                     <a
                         class="contact"
                         href="mailto:nf1928249@gmail.com">
 
                         📧
                         <br>
-
                         nf1928249@gmail.com
 
                     </a>
-
 
                     <a
                         class="contact"
@@ -587,11 +413,9 @@
 
                         💼
                         <br>
-
                         LinkedIn
 
                     </a>
-
 
                     <a
                         class="contact"
@@ -600,7 +424,6 @@
 
                         💻
                         <br>
-
                         GitHub
 
                     </a>
@@ -611,9 +434,6 @@
 
         </main>
 
-
-        <!-- FOOTER -->
-
         <footer>
 
             © 2026 Noor Fatima
@@ -622,9 +442,6 @@
         </footer>
 
     </div>
-
-
-    <!-- JAVASCRIPT -->
 
     <script>
 
